@@ -2,36 +2,32 @@
 
 @section('content')
 
-<div class="container mt-5">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Marca</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Nike</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Adidas</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Reebok</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Puma</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>New Balance</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="table">
+        <thead>
+            <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Marca</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $i = 1; 
+            @endphp
+            @foreach($mark as $m)
+            <tr>
+                <th scope="row">{{$i}}</th>
+                <td>{{$m->idMarca}}</td>
+                <td>{{$m->descripcion}}</td>
+                
+                
+                @php 
+                    $i = $i + 1;
+                @endphp
+            </tr>
+            @endforeach
+
+        </tbody>
+</table>
 @endsection

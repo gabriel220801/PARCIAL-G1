@@ -37,13 +37,13 @@
                         <a class="nav-link" href="/"><i class="fas fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nastul-prado/articulos"><i class="fas fa-box"></i> Articulos</a>
+                        <a class="nav-link" href="{{ route('listado_articulos') }}"><i class="fas fa-box"></i> Articulos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nastul-prado/marcas"><i class="fas fa-tshirt"></i> Marcas</a>
+                        <a class="nav-link" href="{{ route('listado_marcas') }}"><i class="fas fa-tshirt"></i> Marcas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nastul-prado/presentacion"><i class="fas fa-shopping-cart"></i> Tienda</a>
+                        <a class="nav-link" href="{{ route('info_tienda') }}"><i class="fas fa-shopping-cart"></i> Tienda</a>
                     </li>
                 </ul>
             </div>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Tienda extends Controller
 {
-    public function index(){
+    public function tienda(){
         return view('tienda.info');
         } 
 }

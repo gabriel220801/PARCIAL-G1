@@ -1,38 +1,43 @@
 @extends('base')
 
 @section('content')
-<div class="row">
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="{{ asset('img/nike.png') }}" class="card-img-top" alt="Nike">
-                <div class="card-body">
-                    <h5 class="card-title">Nike</h5>
-                    <p class="card-text">Descripción de los productos Nike.</p>
-                    <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
+<table class="table">
+        <thead>
+            <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Referencia</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Color</th>
+            <th scope="col">Precio Unitario</th>
+            <th scope="col">Observacion</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Marca</th>
 
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="{{ asset('img/adidas.jpg') }}" class="card-img-top" alt="Adidas">
-                <div class="card-body">
-                    <h5 class="card-title">Adidas</h5>
-                    <p class="card-text">Descripción de los productos Adidas.</p>
-                    <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $i = 1; 
+            @endphp
+            @foreach($article as $a)
+            <tr>
+                <th scope="row">{{$i}}</th>
+                <td>{{$a->referencia}}</td>
+                <td>{{$a->nombre}}</td>
+                <td>{{$a->descripcionA}}</td>
+                <td>{{$a->color}}</td>
+                <td>{{$a->precioUnitario}}</td>
+                <td>{{$a->observacion}}</td>
+                <td>{{$a->foto}}</td>
+                <td>{{$a->descripcion}}</td>
+                
+                @php 
+                    $i = $i + 1;
+                @endphp
+            </tr>
+            @endforeach
 
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="{{ asset('img/rebook.png') }}" class="card-img-top" alt="Rebook">
-                <div class="card-body">
-                    <h5 class="card-title">Rebook</h5>
-                    <p class="card-text">Descripción de los productos Rebook.</p>
-                    <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        </tbody>
+</table>
 @endsection

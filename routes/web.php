@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Articulo;
+use App\Http\Controllers\Marca;
+use App\Http\Controllers\Tienda;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +21,20 @@ Route::get('/', function () {
 });
 
 //ARTICULOS
-Route::get('/nastul-prado/articulos', function () {
-    return view('articulos/listado');
-});
+
+
+Route::get('/nastul-prado/articulos', [Articulo::class, 'index'])
+->name('listado_articulos');
+
 
 
 //MARCAS
-Route::get('/nastul-prado/marcas', function () {
-    return view('marcas/listado');
-});
+
+Route::get('/nastul-prado/marcas', [Marca::class, 'marcas'])
+->name('listado_marcas');
 
 //TIENDA
-Route::get('/nastul-prado/presentacion', function () {
-    return view('tienda/info');
-});
+
+
+Route::get('/nastul-prado/presentacion', [Tienda::class, 'tienda'])
+->name('info_tienda');

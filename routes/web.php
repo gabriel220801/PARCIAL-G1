@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+//ARTICULOS
+Route::get('/nastul-prado/articulos', function () {
+    return view('articulos/listado');
+});
+
+
+//MARCAS
+Route::get('/nastul-prado/marcas', function () {
+    return view('marcas/listado');
+});
+
+//TIENDA
+Route::get('/nastul-prado/presentacion', function () {
+    return view('tienda/info');
 });
